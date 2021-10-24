@@ -8,9 +8,9 @@ import retrofit2.http.POST
 
 
 interface APIInterface {
-    @GET("/test/")
+    @GET("/recipes/")
     fun getit(): Call<List<Receipes.datalist>>
-    @POST("/test/")
-    fun added(@Body userdat:Receipes.datalist):<List<Receipes.datalist>>
+    @POST("/recipes/")
+    fun added(@Body ud:Receipes.datalist):Call<Receipes.datalist>
 
 }

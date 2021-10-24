@@ -3,10 +3,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.itemtext.view.*
+import kotlinx.android.synthetic.main.recipes.view.*
 
 
-class MyAdapter( var item:ArrayList<String>):RecyclerView.Adapter<MyAdapter.ItemViewHolder>() {
+class MyAdapter( var item:ArrayList<Receipes.datalist>):RecyclerView.Adapter<MyAdapter.ItemViewHolder>() {
     class ItemViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
 
     }
@@ -14,7 +14,7 @@ class MyAdapter( var item:ArrayList<String>):RecyclerView.Adapter<MyAdapter.Item
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.itemtext,
+                R.layout.recipes,
                 parent,
                 false
             )
@@ -22,9 +22,13 @@ class MyAdapter( var item:ArrayList<String>):RecyclerView.Adapter<MyAdapter.Item
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        var items = item[position]
+        var item1 = item[position].title
+        var item2 = item[position].author
+        var item3 = item[position].ingredients
+        var item4 = item[position].instructions
+        val items = "$item1\n$item2\n$item3\n$item4"
         holder.itemView.apply {
-            tv.text = items
+            tttt.text = items
         }
     }
 
